@@ -1,20 +1,28 @@
+:root {
+    --primaryBlue: #006edc;
+    --primaryWhite: #f3f4f6;
+    --primaryBlack: #0f172a;
+    transition: all 1.5s linear;
+}
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    color: var(--primaryBlack);
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
+/* 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -23,4 +31,49 @@ a {
     color: white;
     background: black;
   }
+} */
+
+.btnPri,
+.btnSec {
+    align-items: center;
+    margin: 5px;
+    appearance: none;
+    background-color: #fff;
+    border-radius: 20px;
+    border-style: none;
+    box-sizing: border-box;
+    border: 2px solid #006edc;
+    color: #006edc;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    height: 48px;
+    justify-content: center;
+    max-width: 100%;
+    padding: 2px 20px;
+    text-align: center;
+    transition: all 0.2s;
+    flex-grow: 0;
+}
+.btnPri:hover {
+    background: #006edc;
+    color: #fff;
+    /* border: 5px double #fff; */
+    font-size: 15px;
+}
+
+.btnSec {
+    background-color: #ffc801;
+    border: 2px solid #ffc801;
+
+    color: #fff;
+}
+
+.btnSec:hover {
+    background-color: white;
+    color: #ffc801;
+    transition: all 0.2s;
+    box-shadow: none;
 }
