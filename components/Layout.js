@@ -16,7 +16,6 @@ const Layout = ({ title, keywords, description, children }) => {
                     display: "flex",
                     flexGrow: "1",
                     justifyContent: "center",
-                    border: "2px solid red",
                 }}
             >
                 {children}

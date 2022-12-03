@@ -9,14 +9,14 @@
 .container {
     background-color: #7facdf28;
     height: 100vh;
-    width: calc(100vw - 300px);
+    width: calc(100vw - 250px);
     /* width: 100%; */
-    padding: 20px;
     justify-content: center;
     display: flex;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     flex-wrap: wrap;
     overflow: scroll;
+    /* border: 3px solid magenta; */
 }
 
 @media (max-width: 964px) {
