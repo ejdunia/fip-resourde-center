@@ -1,25 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+const initialStateValue = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    role: "",
+    phone: "",
+    stage: "Beginner",
+    bio: "... ",
+    isLoggedIn: false,
+};
 export const userSlice = createSlice({
     name: "user",
     initialState: {
-        value: {
-            firstName: "John",
-            lastName: "Deez",
-            email: "deez.john@mail.com",
-            role: "Intern",
-            phone: "+2348012345678",
-            stage: "Beginner",
-            bio: "List Your Interests. To make a good first impression, you need to connect with your profile ... ",
-            isLoggedIn: false,
-        },
+        value: { initialStateValue },
     },
     reducers: {
         login: (state, action) => {
             state.value = action.payload;
         },
         logout: (state, action) => {
-            state.value = action.payload;
+            state.value = initialStateValue;
         },
     },
 });
