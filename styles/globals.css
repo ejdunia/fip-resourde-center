@@ -1,6 +1,7 @@
 :root {
     --primaryBlue: #006edc;
     --primaryWhite: #f3f4f6;
+    --primaryOrange: #ffc801;
     --primaryBlack: #0f172a;
     transition: all 1.5s linear;
 }

@@ -6,7 +6,7 @@
     height: auto;
     width: 75vw;
     min-width: 300px;
-    max-width: 750px;
+    max-width: 650px;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
@@ -14,7 +14,7 @@
     box-sizing: border-box;
     border-radius: 10px;
     margin: 30px;
-     box-shadow: rgba(0, 0, 0, 0.05) 2px 6px 24px 2px,
+    box-shadow: rgba(0, 0, 0, 0.05) 2px 6px 24px 2px,
         rgba(0, 0, 0, 0.08) 2px 2px 2px 1px;
 }
 
@@ -34,7 +34,6 @@
     border-radius: 95px;
     padding: 10px;
     box-sizing: border-box;
-   
 }
 
 .assignmentCard h4 {
@@ -53,40 +52,4 @@
     height: 170px;
     margin: 10px;
     overflow: hidden;
-}
-
-.mentorCard {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    border: 2px ridge #006edc;
-    box-sizing: border-box;
-    width: 75vw;
-    max-width: 600px;
-    border-radius: 15px;
-    align-self: center;
-    margin: auto;
-}
-.mentorImage {
-    position: relative;
-    display: flex;
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
-    border: 3px dashed var(--primaryBlue);
-    width: 170px;
-    height: 170px;
-    margin: 10px;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.mentorDetails {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    align-items: flex-end;
-    margin: 10px;
-    padding: 10px;
 }

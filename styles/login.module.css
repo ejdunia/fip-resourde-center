@@ -1,0 +1,128 @@
+.loginBox {
+    margin: auto;
+    width: 400px;
+    padding: 40px;
+    background: var(--primaryBlue);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.loginBox h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: var(--primaryOrange);
+    text-align: center;
+}
+.loginBox h1 {
+    color: var(--primaryOrange);
+}
+.loginContainer {
+    display: flex;
+    /* border: 3px solid firebrick; */
+    margin: auto;
+    width: 80vw;
+    height: 90vh;
+}
+.loginBox .userBox {
+    position: relative;
+}
+
+.loginBox .userBox input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid var(--primaryOrange);
+    outline: none;
+    background: transparent;
+}
+.loginBox .userBox label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.loginBox .userBox input:focus ~ label,
+.loginBox .userBox input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: var(--primaryWhite);
+    font-size: 12px;
+}
+
+.loginBox form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--primaryWhite);
+    border: 1px solid var(--primaryOrange);
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+}
+
+.loginBox a:hover {
+    background: var(--primaryOrange);
+    color: #fff;
+    border-radius: 5px;
+}
+
+.loginBox a span {
+    position: absolute;
+    display: block;
+}
+
+.loginBox a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+}
+
+.loginBox a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: 0.25s;
+}
+
+.loginBox a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: 0.5s;
+}
+
+.loginBox a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: 0.75s;
+}
+.buttonContainer {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}

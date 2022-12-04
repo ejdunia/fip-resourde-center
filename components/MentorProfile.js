@@ -9,7 +9,7 @@ import {
     FaEnvelope,
     FaCertificate,
 } from "react-icons/fa";
-import styles from "@/styles/cards.module.css";
+import styles from "@/styles/mentorStyles.module.css";
 
 const MentorProfile = ({ name, role, email, phone, image }) => {
     return (
@@ -24,8 +24,9 @@ const MentorProfile = ({ name, role, email, phone, image }) => {
                     <Image
                         src={image}
                         alt="mentor"
-                        layout="fill"
+                        fill
                         style={{ display: "block", width: "100%" }}
+                        sizes="(max-width: 200px)"
                     />
                 </div>
                 <button className="btnPri">Message</button>
@@ -64,11 +65,11 @@ const MentorProfile = ({ name, role, email, phone, image }) => {
     );
 };
 MentorProfile.defaultProps = {
-    name: "Jane Doe",
+    name: "Jane D",
     email: "jane.doe@mail.com",
     role: "Mentor",
     phone: "+2348012345678",
-    image: mentorImage
+    image: mentorImage,
 };
 
 export default MentorProfile;

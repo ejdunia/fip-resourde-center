@@ -1,24 +1,49 @@
 import React from "react";
 import styles from "@/styles/curriculum.module.css";
-const index = () => {
-    return <div className={styles.container}>curriculum</div>;
+import Accordion from "@/components/Accordion";
+
+import { useSelector, useDispatch } from "react-redux";
+
+const Curriculum = ({}) => {
+    const user = useSelector((state) => state.user.value);
+    let userStage = user.stage;
+    const stage = curriculum[userStage.toLowerCase()];
+    console.log(userStage);
+
+    return (
+        <>
+            <div className={styles.container}>
+                <h2> Curriculum</h2>
+                <h3>Track: {userStage}</h3>
+                <div className={styles.accordion}>
+                    {stage.map((track) => (
+                        <Accordion
+                            key={track.activity}
+                            title={track.activity}
+                            content={track.details}
+                        />
+                    ))}
+                </div>
+            </div>
+        </>
+    );
 };
 
-export default index;
+export default Curriculum;
 
 const curriculum = {
     beginner: [
         {
             activity: "Lesson: HTML 5",
             details:
-                "An introduction to HTML 5 - Learn HTML Tags,Anchor Tag,Self Closing HTML Tags, Semantic Elements,Pass Supervisor Assessment",
+                "An introduction to HTML 5 - Learn HTML Tags, Anchor Tag, Self Closing HTML Tags, Semantic Elements, Pass Supervisor Assessment",
             duration: "2 weeks",
             done: false,
         },
         {
             activity: "Lesson: Advance HTML 5",
             details:
-                "HTML Forms,HTML Forms 2,Submitting A Form,HTML Tags 3,  Pass Supervisor Assessment: Presentation of Completed Form created using HTML. Intern may also get createive by using 3rd-Party Applications such as Forms.io to collect data submitted using form.",
+                "HTML Forms, HTML Forms 2, Submitting A Form, HTML Tags 3,  Pass Supervisor Assessment: Presentation of Completed Form created using HTML. Intern may also get createive by using 3rd-Party  Applications such as Forms.io to collect data submitted using form.",
             duration: "1 week",
             done: false,
         },

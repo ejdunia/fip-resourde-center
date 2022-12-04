@@ -14,7 +14,7 @@ const Nav = () => {
     const [visible, setVisible] = useState(false);
     const handleClick = () => {
         setVisible((visible) => !visible);
-        console.log(visible);
+        // console.log(visible);
     };
 
     return (
@@ -34,21 +34,21 @@ const Nav = () => {
                 <nav className={styles.nav}>
                     <ul
                         id="primaryNav"
-                        // data-visible={visible}
+                        data-visible={visible}
                         className={`${styles.PrimaryNav}`}
                     >
-                        <li>
+                        <li onClick={handleClick}>
                             <FaHome />
                             <Link href="/">HOME</Link>
                         </li>
-                        <li>
+                        <li onClick={handleClick}>
                             <FaBookReader />{" "}
                             <Link href="/curriculum">CURRICULUM</Link>
                         </li>
-                        <li>
+                        <li onClick={handleClick}>
                             <FaFirstOrder /> <Link href="/mentor">MENTOR</Link>
                         </li>
-                        <li>
+                        <li onClick={handleClick}>
                             {" "}
                             <FaSmile />
                             <Link href="/profile">PROFILE</Link>
