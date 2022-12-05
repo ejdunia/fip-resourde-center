@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "@/styles/curriculum.module.css";
 import Accordion from "@/components/Accordion";
 import selectStyles from "@/styles/select.module.css";
@@ -7,7 +7,8 @@ import { useSelector, useDispatch } from "react-redux";
 const Curriculum = ({}) => {
     const user = useSelector((state) => state.user.value);
     let userStage = user.stage;
-    const stage = curriculum[userStage.toLowerCase()];
+    const [currStage, setCurrStage] = useState(userStage);
+    const stage = curriculum[currStage.toLowerCase()];
     console.log(userStage);
 
     return (
@@ -19,8 +20,10 @@ const Curriculum = ({}) => {
                         <select
                             name="stage"
                             id="stage"
-                            onChange={() => {}}
-                            value={"pass a value here for the track"}
+                            onChange={(e) => {
+                                setCurrStage(e.target.value);
+                            }}
+                            value={currStage}
                         >
                             <option value="">Select</option>
                             <option value="Beginner">Beginner</option>
@@ -29,7 +32,7 @@ const Curriculum = ({}) => {
                         </select>
                     </div>
                 </form>
-                <h3>Track: {userStage}</h3>
+                <h3>Track: {currStage}</h3>
                 <div className={styles.accordion}>
                     {stage.map((track) => (
                         <Accordion
