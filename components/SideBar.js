@@ -18,11 +18,11 @@ const SideBar = () => {
             <div className={CalenderStyles.calendarContainer}>
                 <Calendar onChange={onChange} value={value} />
             </div>
-            <h4 className={styles.title}>Pending Tasks</h4>
+            <h4 className={styles.title}>Notes</h4>
             <div className={styles.taskContainer}>
-                {tasks.map((task, index) => (
+                {notes.map((note, index) => (
                     <div className={styles.tasks} key={index}>
-                        {task}
+                        {note}
                     </div>
                 ))}
             </div>
@@ -31,12 +31,12 @@ const SideBar = () => {
     );
 };
 
-const tasks = [
-    " Add a Task to get started",
-    "Task 1",
-    "Task 2",
-    "Task 3",
-    "Bonus Task",
+const notes = [
+    " Add a note to get started",
+    "Note 1",
+    "Note 2",
+    "Note 3",
+    "Bonus note",
     " Long text test lorem ipsum domet sec ammit ad asa oekw dowedwp edw ndpwpdwpedw odwpndw edb pvf",
 ];
 

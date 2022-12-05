@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "@/styles/curriculum.module.css";
 import Accordion from "@/components/Accordion";
-
+import selectStyles from "@/styles/select.module.css";
 import { useSelector, useDispatch } from "react-redux";
 
 const Curriculum = ({}) => {
@@ -14,6 +14,21 @@ const Curriculum = ({}) => {
         <>
             <div className={styles.container}>
                 <h2> Curriculum</h2>
+                <form>
+                    <div className={selectStyles.select}>
+                        <select
+                            name="stage"
+                            id="stage"
+                            onChange={() => {}}
+                            value={"pass a value here for the track"}
+                        >
+                            <option value="">Select</option>
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermmediate">Intermmediate</option>
+                            <option value="Advanced">Advanced</option>
+                        </select>
+                    </div>
+                </form>
                 <h3>Track: {userStage}</h3>
                 <div className={styles.accordion}>
                     {stage.map((track) => (

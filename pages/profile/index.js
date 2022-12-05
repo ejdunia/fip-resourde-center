@@ -1,6 +1,5 @@
-import React, { use } from "react";
+import React from "react";
 import styles from "@/styles/profile.module.css";
-import Login from "@/components/Login";
 import picture from "@/public/images/studyImage.jpg";
 import Image from "next/image";
 import {
@@ -11,23 +10,24 @@ import {
 } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "features/user";
+import ProfileUpdate from "@/components/ProfileUpdate";
+import ReactModal from "react-modal";
+import { useState } from "react";
+import { show, hide } from "features/modal";
 
 const Profile = () => {
     const user = useSelector((state) => state.user.value);
+    const modal = useSelector((state) => state.modal.value);
+
     const dispatch = useDispatch();
     const hancleLogout = () => {
-        const exploreProfile = {
-            firstName: "",
-            lastName: "",
-            email: "email@mail.com",
-            role: "Intern",
-            phone: "+234xxxxxxxx",
-            stage: "Beginner",
-            bio: "",
-            isLoggedIn: false,
-        };
-        dispatch(logout(exploreProfile));
+        dispatch(logout());
     };
+    const showModal = (e) => {
+        e.preventDefault();
+        dispatch(show());
+    };
+
     return (
         <div className={styles.container}>
             <div className={styles.profileCard}>
@@ -46,14 +46,12 @@ const Profile = () => {
                         />
                     </div>
                     <div>
-                        <button className={styles.editBtn}>
+                        <button className={styles.editBtn} onClick={showModal}>
                             edit <FaUserEdit />
                         </button>{" "}
                         <button
                             className={styles.editBtn}
-                            onClick={() => {
-                                hancleLogout();
-                            }}
+                            onClick={hancleLogout}
                         >
                             logout
                         </button>
@@ -75,7 +73,9 @@ const Profile = () => {
                     <p className={styles.bio}>{user.bio}</p>
                 </div>
             </div>
-            {/* <Login /> */}
+            <ReactModal isOpen={modal}>
+                <ProfileUpdate />
+            </ReactModal>
         </div>
     );
 };

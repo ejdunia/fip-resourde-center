@@ -3,7 +3,7 @@ const initialStateValue = {
     firstName: "",
     lastName: "",
     email: "",
-    role: "",
+    role: "Intern",
     phone: "",
     stage: "Beginner",
     bio: "... ",
@@ -14,6 +14,7 @@ export const userSlice = createSlice({
     initialState: {
         value: { initialStateValue },
     },
+    
     reducers: {
         login: (state, action) => {
             state.value = action.payload;
@@ -21,9 +22,12 @@ export const userSlice = createSlice({
         logout: (state, action) => {
             state.value = initialStateValue;
         },
+        update: (state, action) => {
+            state.value = action.payload;
+        },
     },
 });
 
-export const { login, logout } = userSlice.actions;
+export const { login, logout, update } = userSlice.actions;
 
 export default userSlice.reducer;

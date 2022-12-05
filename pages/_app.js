@@ -1,14 +1,7 @@
 import "../styles/globals.css";
 import Layout from "@/components/Layout";
-import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import userReducer from "../features/user";
-
-const store = configureStore({
-    reducer: { user: userReducer },
-});
-
-
+import store from "features/store";
 
 function MyApp({ Component, pageProps }) {
     return (

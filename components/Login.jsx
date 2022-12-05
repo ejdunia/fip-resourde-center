@@ -22,7 +22,7 @@ const Login = () => {
     return (
         <div className={styles.loginContainer}>
             <div className={styles.loginBox}>
-            <h1>FIP Resource Center</h1>
+                <h1>FIP Resource Center</h1>
                 <h2>Login</h2>
                 <form>
                     <div className={styles.userBox}>
@@ -34,7 +34,7 @@ const Login = () => {
                         <label>Password</label>
                     </div>
                     <div className={styles.buttonContainer}>
-                        <a href="#">Login</a>
+                        <a href="#">Sign Up</a>
                         <a href="#" onClick={() => explore()}>
                             Explore
                         </a>
